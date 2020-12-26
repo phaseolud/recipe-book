@@ -17,7 +17,7 @@ export default {
   },
  async fetch() {
    this.recipes = await fetch(
-     'http://localhost:8000/api/recipes'
+     'http://erised:3333/api/recipes'
    ).then(res => res.json())
  }
 }

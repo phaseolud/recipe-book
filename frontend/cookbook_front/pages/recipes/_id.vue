@@ -2,7 +2,7 @@
   <div>
     <div class="bg-red-500 rounded-lg">
       <img
-        :src="'http://localhost:8000/' + recipe_data.image"
+        :src="'http://erised:3333/' + recipe_data.image"
         alt=""
         class="w-full h-48 object-cover rounded-lg opacity-100"
       />

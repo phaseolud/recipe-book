@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/recipes", (function(a){return {data:[{}],fetch:[{_error:{message:"request to http:\u002F\u002Flocalhost:8000\u002Fapi\u002Frecipes failed, reason: connect ECONNREFUSED 127.0.0.1:8000",type:"system",errno:a,code:a,statusCode:500}}],mutations:void 0}}("ECONNREFUSED")));
