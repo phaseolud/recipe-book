@@ -64,7 +64,7 @@
         <label for="ingredients" class="text-sm text-gray-600 font-sans"
           >ingredienten</label
         >
-        <div v-for="(ingredient, index) in ingredients">
+        <div v-for="(ingredient,index) in ingredients" v-bind:key="ingredient">
           <div class="w-full flex">
             <input
               class="bg-gray-300 focus:outline-none p-1 mr-3 border-b-2 border-red-300 focus:border-red-500 transition duration-300 ease-in-out w-12 flex-none"
@@ -88,7 +88,7 @@
               type="text"
               placeholder="ingredient"
               v-model="ingredient.name"
-              :key="index"
+              :key="ingredient"
             />
             <button
               class="pl-3 hover:text-red-500 focus:outline-none"
@@ -110,7 +110,7 @@
         <label for="instructies" class="text-sm text-gray-600 font-sans"
           >instructies</label
         >
-        <div v-for="(stap, index) in instructies" class="mb-2" v-bind:key="stap">
+        <div v-for="(stap,index) in instructies" class="mb-2" v-bind:key="stap">
           <div class="flex items-center pb-2">
             <h2 class="text-l">Stap {{ index + 1 }}</h2>
             <button

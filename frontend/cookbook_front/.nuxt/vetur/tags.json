@@ -1,0 +1,14 @@
+{
+  "Logo": {
+    "description": "Auto imported from components/Logo.vue"
+  },
+  "LazyLogo": {
+    "description": "Auto imported from components/Logo.vue"
+  },
+  "RecipeBlock": {
+    "description": "Auto imported from components/RecipeBlock.vue"
+  },
+  "LazyRecipeBlock": {
+    "description": "Auto imported from components/RecipeBlock.vue"
+  }
+}

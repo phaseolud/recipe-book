@@ -1,7 +1,10 @@
 <template>
   <div>
+    <p v-if="$fetchState.pending"></p>
+    <p v-else-if="$fetchState.error">Error tijdens het laden van de recepten</p>
+    <div v-else>
     <div class="bg-red-500 rounded-lg">
-      <img
+      <img v-if="recipe_data.image !== null"
         :src="'http://erised:3333/' + recipe_data.image"
         alt=""
         class="w-full h-48 object-cover rounded-lg opacity-100"
@@ -44,18 +47,23 @@
       </div>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
 export default {
-  async asyncData({ $axios, params }) {
-    const recipe_id = params.id
-    const recipe_data = await $axios
-      .get('http://localhost:8000/api/recipes/' + recipe_id)
-      .then((res) => res.data)
-      .catch((error) => console.log(error))
-    return { recipe_id, recipe_data }
+  data() {
+    return {
+      recipe_data: {}
+    };
   },
+  async asyncData({params }) {
+    const recipe_id = params.id
+    return { recipe_id }
+  },
+  async fetch() {
+    this.recipe_data =  await this.$axios.get('http://erised:3333/api/recipes/' + this.recipe_id).then((res) => res.data).catch((error) => console.log(error));
+  }
 }
 </script>
 
