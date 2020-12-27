@@ -64,8 +64,8 @@ class RecipeController extends Controller
             Ingredient::create([
                 'recipe_id' => $recipe->id,
                 'ingredient' => $ingredient['name'],
-                'unit' => $ingredient['unit'],
-                'quantity' => $ingredient['qnty'],
+                'unit' => $ingredient['unit'] ?? null,
+                'quantity' => $ingredient['qnty'] ?? null,
                 'importance' => $index
             ]);
         }
