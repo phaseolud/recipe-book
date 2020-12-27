@@ -35,7 +35,7 @@ class RecipeController extends Controller
             'title' => 'required',
             'people' => 'integer|min:0',
             'ingredients.*.name' => 'required',
-            'ingredients.*.qnty' => 'numeric|required|min:0',
+            'ingredients.*.qnty' => 'numeric|nullable|min:0',
             'ingredients.*.unit' => 'alpha_dash|nullable',
             'instructies.*.beschrijving' => 'required',
             'imagepath' => 'nullable',
