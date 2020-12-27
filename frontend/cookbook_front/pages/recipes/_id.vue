@@ -62,7 +62,7 @@ export default {
     return { recipe_id }
   },
   async fetch() {
-    this.recipe_data =  await this.$axios.get('http://erised:3333/api/recipes/' + this.recipe_id).then((res) => res.data).catch((error) => console.log(error));
+    this.recipe_data =  await this.$axios.get('http://192.168.2.248:3333/api/recipes/' + this.recipe_id).then((res) => res.data).catch((error) => console.log(error));
   }
 }
 </script>

@@ -17,7 +17,7 @@ export default {
   },
  async fetch() {
    this.recipes = await fetch(
-     'http://192.168.2.248/api/recipes'
+     'http://192.168.2.248:3333/api/recipes'
    ).then(res => res.json())
  }
 }
