@@ -195,7 +195,7 @@ export default {
   async uploadImage() {
       let fd = new FormData();
           fd.append('image',this.file);
-          return this.$axios.post('http://erised:3333/api/recipes/upload-image',fd).then(response => response.data
+          return this.$axios.post('http://192.168.2.248:3333/api/recipes/upload-image',fd).then(response => response.data
           ).catch(error => {
               this.errors = error.response.data;
           });
@@ -205,7 +205,7 @@ export default {
       if(typeof(this.file) !== 'undefined' && this.file !== null && this.filepath.length === 0) {
            this.filepath = await this.uploadImage();
       }
-      this.$axios.post('http://erised:3333/api/recipes', {
+      this.$axios.post('http://192.168.2.248:3333/api/recipes', {
           ingredients: this.ingredients,
           title: this.title,
           people: this.people,

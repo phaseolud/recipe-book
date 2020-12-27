@@ -5,7 +5,7 @@
     <div v-else>
     <div class="bg-red-500 rounded-lg">
       <img v-if="recipe_data.image !== null"
-        :src="'http://erised:3333/' + recipe_data.image"
+        :src="'http://192.168.2.248:3333/' + recipe_data.image"
         alt=""
         class="w-full h-48 object-cover rounded-lg opacity-100"
       />
