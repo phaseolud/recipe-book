@@ -163,10 +163,10 @@
 export default {
   data() {
   return {
-    ingredients: [{"name":"ABC","qnty":"1","unit":""}],
-    title: "abc",
-    people: 1,
-    instructies: [{"beschrijving":"abc"}],
+    ingredients: [{"name":"","qnty":"","unit":""}],
+    title: "",
+    people: null,
+    instructies: [{"beschrijving":""}],
     options: ['g','kg','L','mL','tsp','tbsp'],
     errors: {},
     file: null,
