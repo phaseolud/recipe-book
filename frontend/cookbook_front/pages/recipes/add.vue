@@ -70,6 +70,7 @@
               class="bg-gray-300 focus:outline-none p-1 mr-3 border-b-2 border-red-300 focus:border-red-500 transition duration-300 ease-in-out w-12 flex-none"
               type="number"
               min="0"
+              ref="ingredient_qnty"
               v-model.number="ingredient.qnty"
               placeholder="hoeveelheid"
             />
@@ -125,7 +126,7 @@
           <textarea
             class="bg-gray-300 focus:outline-none p-1 border-b-2 border-red-300 focus:border-red-500 transition duration-300 ease-in-out w-full"
             type="text"
-            placeholder="Instructie"
+            placeholder="Instructie" ref="instruction"
             v-model="stap.beschrijving"
             :key="index"
           ></textarea>
@@ -177,12 +178,15 @@ export default {
   methods: {
   addIngredient() {
       this.ingredients.push({"name": '','qnty':'','unit': ''});
+      this.$nextTick(() => this.$refs.ingredient_qnty.slice(-1)[0].focus());
   },
   removeIngredient(index) {
       this.ingredients.splice(index,1);
   },
   addStap() {
       this.instructies.push({"beschrijving":""});
+      this.$nextTick(() => this.$refs.instruction.slice(-1)[0].focus());
+
   },
   removeStap(index) {
       this.instructies.splice(index,1);
