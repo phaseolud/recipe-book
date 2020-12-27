@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div class> <!--class="w-full h-screen" -->
+  <div class="w-full h-screen"> <!--class="w-full h-screen" -->
   <div class="container mx-auto pb-32">
     <div class="m-2">
       <div v-if="$nuxt.isOffline" class="bg-green-300 border-green-800 border-2 p-2 align-center flex justify-between rounded">Momenteel ben je offline. Verbind met het internet om optimaal gebruik te maken van de app.</div>

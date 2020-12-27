@@ -176,7 +176,7 @@ export default {
   },
   methods: {
   addIngredient() {
-      this.ingredients.push({"name": '','qnty':''});
+      this.ingredients.push({"name": '','qnty':'','unit': ''});
   },
   removeIngredient(index) {
       this.ingredients.splice(index,1);

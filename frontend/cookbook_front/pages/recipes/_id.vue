@@ -12,21 +12,21 @@
     </div>
     <div class="py-2 mb-4">
         
-        <p class="text-xl">{{ recipe_data.title }}</p>
+        <p class="text-2xl">{{ recipe_data.title }}</p>
         <p v-if="recipe_data.source" class="text-sm text-gray-600">
           bron: {{ recipe_data.source }}
         </p>
     </div>
     <div class="md:flex">
-      <div class="py-2 md:flex-shrink md:mr-12">
+      <div class="py-2 md:flex-shrink md:mr-12 md:max-w-p40">
         <p class="text-lg font-bold">Ingredienten</p>
-        <table class="table-auto text">
+        <table class="table-auto">
           <tbody>
             <tr
               v-for="ingredient in recipe_data.ingredient"
               v-bind:key="ingredient"
             >
-              <td class="">{{ ingredient.quantity }} {{ ingredient.unit }}</td>
+              <td nowrap="nowrap" class="align-top">{{ ingredient.quantity }} {{ ingredient.unit }}</td>
               <td class="px-4">{{ ingredient.ingredient }}</td>
             </tr>
           </tbody>
