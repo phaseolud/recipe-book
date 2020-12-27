@@ -60,6 +60,7 @@ class RecipeController extends Controller
         }
 
         foreach (request('ingredients') as $index => $ingredient) {
+            Log::info($ingredient);
             Ingredient::create([
                 'recipe_id' => $recipe->id,
                 'ingredient' => $ingredient['name'],
