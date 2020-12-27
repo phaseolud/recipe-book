@@ -2,7 +2,9 @@
 <div>
   <div class> <!--class="w-full h-screen" -->
   <div class="container mx-auto pb-32">
-    <div class="m-2"><Nuxt /></div>
+    <div class="m-2">
+      <div v-if="$nuxt.isOffline" class="bg-green-300 border-green-800 border-2 p-2 align-center flex justify-between rounded">Momenteel ben je offline. Verbind met het internet om optimaal gebruik te maken van de app.</div>
+      <Nuxt /></div>
   </div>
   <!-- component -->
 	<!-- <section id="bottom-navigation" class="md:hidden block fixed inset-x-0 bottom-0 z-10 bg-white shadow"> // if shown only tablet/mobile-->

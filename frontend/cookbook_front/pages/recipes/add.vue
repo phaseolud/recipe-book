@@ -165,7 +165,7 @@ export default {
   return {
     ingredients: [{"name":"","qnty":"","unit":""}],
     title: "",
-    people: null,
+    people: 0,
     instructies: [{"beschrijving":""}],
     options: ['g','kg','L','mL','tsp','tbsp'],
     errors: {},
@@ -205,6 +205,7 @@ export default {
       if(typeof(this.file) !== 'undefined' && this.file !== null && this.filepath.length === 0) {
            this.filepath = await this.uploadImage();
       }
+      let self = this;
       this.$axios.post('http://192.168.2.248:3333/api/recipes', {
           ingredients: this.ingredients,
           title: this.title,
@@ -213,7 +214,8 @@ export default {
           imagepath: this.filepath,
           source: this.source,
       }).then(function (response) {
-          console.log(response); 
+          console.log(response);
+          self.$router.push('/recipes');
       }).catch(error => {
           console.log("ERROR: ", error.response.data);
           this.errors = error.response.data;
