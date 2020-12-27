@@ -3,7 +3,7 @@
     <p v-if="$fetchState.pending"></p>
     <p v-else-if="$fetchState.error">Error tijdens het laden van de recepten</p>
     <div v-else>
-    <div class="bg-red-500 rounded-lg">
+    <div class="bg-red-500 rounded-lg h-48">
       <img v-if="recipe_data.image !== null"
         :src="'http://192.168.2.248:3333/' + recipe_data.image"
         alt=""
