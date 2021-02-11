@@ -1155,7 +1155,7 @@ async function setContext(app, context) {
       error: context.error,
       base: '/',
       env: {
-        "serverUrl": "127.0.0.1:8000"
+        "serverUrl": "192.168.2.252:3333"
       }
     }; // Only set once
 

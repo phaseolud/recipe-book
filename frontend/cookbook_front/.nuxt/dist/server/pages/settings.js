@@ -44,7 +44,7 @@ var staticRenderFns = []
   },
 
   async addTag() {
-    this.tags = await this.$axios.post('http://' + "127.0.0.1:8000" + '/api/tags', {
+    this.tags = await this.$axios.post('http://' + "192.168.2.252:3333" + '/api/tags', {
       tag: this.tag_new
     }).then(function (res) {
       this.tag_new = '';
@@ -53,11 +53,11 @@ var staticRenderFns = []
   },
 
   async removeTag(tag) {
-    this.tags = await this.$axios.delete('http://' + "127.0.0.1:8000" + '/api/tags/' + tag).then(res => res.data).catch(error => console.log(error));
+    this.tags = await this.$axios.delete('http://' + "192.168.2.252:3333" + '/api/tags/' + tag).then(res => res.data).catch(error => console.log(error));
   },
 
   async fetch() {
-    this.tags = await this.$axios.get('http://' + "127.0.0.1:8000" + '/api/tags').then(res => res.data).catch(error => console.log(error));
+    this.tags = await this.$axios.get('http://' + "192.168.2.252:3333" + '/api/tags').then(res => res.data).catch(error => console.log(error));
   }
 
 });

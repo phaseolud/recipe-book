@@ -31,7 +31,7 @@ var staticRenderFns = []
   props: ['recipe'],
   computed: {
     serverUrl() {
-      return "127.0.0.1:8000";
+      return "192.168.2.252:3333";
     }
 
   }
@@ -100,7 +100,7 @@ var staticRenderFns = []
   },
 
   async fetch() {
-    this.recipes = await fetch('http://' + "127.0.0.1:8000" + '/api/recipes/').then(res => res.json());
+    this.recipes = await fetch('http://' + "192.168.2.252:3333" + '/api/recipes/').then(res => res.json());
   }
 
 });

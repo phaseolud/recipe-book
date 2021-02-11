@@ -231,7 +231,7 @@ var staticRenderFns = []
     async uploadImage() {
       let fd = new FormData();
       fd.append('image', this.file);
-      return this.$axios.post('http://' + "127.0.0.1:8000" + '/api/recipes/' + '/upload-image', fd).then(response => response.data).catch(error => {
+      return this.$axios.post('http://' + "192.168.2.252:3333" + '/api/recipes/' + '/upload-image', fd).then(response => response.data).catch(error => {
         this.errors = error.response.data;
       });
     },
@@ -242,7 +242,7 @@ var staticRenderFns = []
       }
 
       let self = this;
-      this.$axios.post('http://' + "127.0.0.1:8000" + '/api/recipes/', {
+      this.$axios.post('http://' + "192.168.2.252:3333" + '/api/recipes/', {
         ingredients: this.ingredients,
         title: this.title,
         people: this.people,

@@ -94,12 +94,12 @@ var staticRenderFns = []
   },
 
   async fetch() {
-    this.recipe_data = await this.$axios.get('http://' + "127.0.0.1:8000" + '/api/recipes/' + this.recipe_id).then(res => res.data).catch(error => console.log(error));
+    this.recipe_data = await this.$axios.get('http://' + "192.168.2.252:3333" + '/api/recipes/' + this.recipe_id).then(res => res.data).catch(error => console.log(error));
   },
 
   computed: {
     serverUrl() {
-      return "127.0.0.1:8000";
+      return "192.168.2.252:3333";
     }
 
   }
