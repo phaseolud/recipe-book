@@ -3,36 +3,42 @@
     "name": "recipes",
     "path": "/recipes",
     "component": "C:\\\\Users\\\\loekv\\\\OneDrive - TU Eindhoven\\\\programming\\\\recipe book\\\\frontend\\\\cookbook_front\\\\pages\\\\recipes\\\\index.vue",
-    "chunkName": "pages/recipes/index"
+    "chunkName": "pages/recipes/index",
+    "_name": "_62b5d47e"
   },
   {
     "name": "settings",
     "path": "/settings",
     "component": "C:\\\\Users\\\\loekv\\\\OneDrive - TU Eindhoven\\\\programming\\\\recipe book\\\\frontend\\\\cookbook_front\\\\pages\\\\settings.vue",
-    "chunkName": "pages/settings"
+    "chunkName": "pages/settings",
+    "_name": "_36932158"
   },
   {
     "name": "recipes-add",
     "path": "/recipes/add",
     "component": "C:\\\\Users\\\\loekv\\\\OneDrive - TU Eindhoven\\\\programming\\\\recipe book\\\\frontend\\\\cookbook_front\\\\pages\\\\recipes\\\\add.vue",
-    "chunkName": "pages/recipes/add"
+    "chunkName": "pages/recipes/add",
+    "_name": "_2961cc66"
   },
   {
     "name": "recipes-id",
     "path": "/recipes/:id",
     "component": "C:\\\\Users\\\\loekv\\\\OneDrive - TU Eindhoven\\\\programming\\\\recipe book\\\\frontend\\\\cookbook_front\\\\pages\\\\recipes\\\\_id\\\\index.vue",
-    "chunkName": "pages/recipes/_id/index"
+    "chunkName": "pages/recipes/_id/index",
+    "_name": "_bcacd148"
   },
   {
     "name": "recipes-id-edit",
     "path": "/recipes/:id/edit",
     "component": "C:\\\\Users\\\\loekv\\\\OneDrive - TU Eindhoven\\\\programming\\\\recipe book\\\\frontend\\\\cookbook_front\\\\pages\\\\recipes\\\\_id\\\\edit.vue",
-    "chunkName": "pages/recipes/_id/edit"
+    "chunkName": "pages/recipes/_id/edit",
+    "_name": "_1ad79f20"
   },
   {
     "name": "index",
     "path": "/",
     "component": "C:\\\\Users\\\\loekv\\\\OneDrive - TU Eindhoven\\\\programming\\\\recipe book\\\\frontend\\\\cookbook_front\\\\pages\\\\index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_62d436f1"
   }
 ]
