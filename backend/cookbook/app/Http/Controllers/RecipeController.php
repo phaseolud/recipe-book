@@ -72,6 +72,49 @@ class RecipeController extends Controller
         return response()->json($request,201);
     }
 
+    public function update(Recipe $recipe)
+    {
+        $validator = Validator::make(request()->all(),[
+            'title' => 'required',
+            'people' => 'integer|min:0',
+            'ingredients.*.ingredient' => 'required',
+            'ingredients.*.quantity' => 'numeric|nullable|min:0',
+            'ingredients.*.unit' => 'alpha_dash|nullable',
+            'instructies.*.instruction' => 'required',
+            'imagepath' => 'nullable',
+            'source' => 'nullable'
+        ]);
+
+        if($validator->fails()) {
+            return response()->json($validator->messages(),422);
+        }
+        
+        $recipe->title = request('title');
+        $recipe->people = request('people');
+        if(request('imagepath')) $recipe->imagepath = request('imagepath');
+        $recipe->source = request('source');
+        $recipe->save();
+
+        foreach (request('instructies') as $index => $instructie) {
+            Instruction::updateOrCreate([
+                'recipe_id' => $recipe->id,
+                'instruction' => $instructie['instruction'],
+                'step' => $index
+            ]);
+        }
+
+        foreach (request('ingredients') as $index => $ingredient) {
+            Ingredient::updateOrCreate([
+                'recipe_id' => $recipe->id,
+                'ingredient' => $ingredient['ingredient'],
+                'unit' => $ingredient['unit'] ?? null,
+                'quantity' => $ingredient['quantity'] ?? null,
+                'importance' => $index
+            ]);
+        }
+
+    }
+
     public function image() 
     {
         $validator = Validator::make(request()->all(),[

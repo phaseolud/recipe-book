@@ -22,3 +22,4 @@ Route::get('recipes',[RecipeController::class,'index']);
 Route::post('recipes',[RecipeController::class,'store']);
 Route::post('recipes/upload-image',[RecipeController::class,'image']);
 Route::get('recipes/{recipe}',[RecipeController::class,'show']);
+Route::put('recipes/{recipe}',[RecipeController::class,'update']);
