@@ -1,0 +1,21 @@
+{
+  "entry": "server.js",
+  "files": {
+    "pages/index.js": "pages/index.js",
+    "pages/recipes/_id/edit.js": "pages/recipes/_id/edit.js",
+    "pages/recipes/_id/index.js": "pages/recipes/_id/index.js",
+    "pages/recipes/add.js": "pages/recipes/add.js",
+    "pages/recipes/index.js": "pages/recipes/index.js",
+    "pages/settings.js": "pages/settings.js",
+    "server.js": "server.js"
+  },
+  "maps": {
+    "pages/index.js": "pages/index.js.map",
+    "pages/recipes/_id/edit.js": "pages/recipes/_id/edit.js.map",
+    "pages/recipes/_id/index.js": "pages/recipes/_id/index.js.map",
+    "pages/recipes/add.js": "pages/recipes/add.js.map",
+    "pages/recipes/index.js": "pages/recipes/index.js.map",
+    "pages/settings.js": "pages/settings.js.map",
+    "server.js": "server.js.map"
+  }
+}
