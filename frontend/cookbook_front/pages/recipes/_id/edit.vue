@@ -71,7 +71,7 @@
               type="number"
               min="0"
               ref="ingredient_qnty"
-              v-model.number="ingredient.qnty"
+              v-model.number="ingredient.quantity"
               placeholder="hoeveelheid"
             />
 
@@ -88,7 +88,7 @@
               class="bg-gray-300 focus:outline-none p-1 border-b-2 border-red-300 focus:border-red-500 transition duration-300 ease-in-out flex-grow"
               type="text"
               placeholder="ingredient"
-              v-model="ingredient.name"
+              v-model="ingredient.ingredient"
               :key="ingredient"
             />
             <button
@@ -127,7 +127,7 @@
             class="bg-gray-300 focus:outline-none p-1 border-b-2 border-red-300 focus:border-red-500 transition duration-300 ease-in-out w-full"
             type="text"
             placeholder="Instructie" ref="instruction"
-            v-model="stap.beschrijving"
+            v-model="stap.instruction"
             :key="index"
           ></textarea>
         </div>
@@ -164,16 +164,30 @@
 export default {
   data() {
   return {
-    ingredients: [{"name":"","qnty":"","unit":""}],
+    ingredients: [],
     title: "",
     people: 0,
-    instructies: [{"beschrijving":""}],
+    instructies: [],
     options: ['g','kg','L','mL','tsp','tbsp'],
     errors: {},
     file: null,
     filepath: '',
     source: '',
   }
+  },
+  async asyncData({params }) {
+    const recipe_id = params.id
+    return { recipe_id }
+  },
+  async fetch() {
+      let data = await this.$axios.get('http://' + process.env.serverUrl + '/api/recipes/' + this.recipe_id).then((res) => res.data).catch((error) => console.log(error));
+      console.log(data);
+      this.ingredients = data.ingredient;
+      this.title = data.title;
+      this.instructies = data.instruction;
+      this.people = data.people;
+      this.source = data.source;
+      this.filepath = data.filepath;
   },
   methods: {
   addIngredient() {
@@ -195,11 +209,10 @@ export default {
   handleFile(e) {
       this.file = e.target.files[0];
   },
-
   async uploadImage() {
       let fd = new FormData();
           fd.append('image',this.file);
-          return this.$axios.post('http://' + process.env.serverUrl + '/api/recipes/' + '/upload-image',fd).then(response => response.data
+          return this.$axios.post('http://' + process.env.serverUrl + '/api/recipes/upload-image',fd).then(response => response.data
           ).catch(error => {
               this.errors = error.response.data;
           });
@@ -210,7 +223,7 @@ export default {
            this.filepath = await this.uploadImage();
       }
       let self = this;
-      this.$axios.post('http://' + process.env.serverUrl + '/api/recipes/', {
+      this.$axios.put('http://' + process.env.serverUrl + '/api/recipes/' + this.recipe_id, {
           ingredients: this.ingredients,
           title: this.title,
           people: this.people,

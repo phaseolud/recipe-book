@@ -17,7 +17,7 @@ export default {
   },
  async fetch() {
    this.recipes = await fetch(
-     'http://192.168.2.248:3333/api/recipes'
+     'http://' + process.env.serverUrl + '/api/recipes/'
    ).then(res => res.json())
  }
 }

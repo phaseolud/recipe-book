@@ -4,10 +4,11 @@ import { normalizeURL, decode } from '@nuxt/ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _9af01a44 = () => interopDefault(import('..\\pages\\fun.vue' /* webpackChunkName: "pages/fun" */))
 const _62b5d47e = () => interopDefault(import('..\\pages\\recipes\\index.vue' /* webpackChunkName: "pages/recipes/index" */))
+const _36932158 = () => interopDefault(import('..\\pages\\settings.vue' /* webpackChunkName: "pages/settings" */))
 const _2961cc66 = () => interopDefault(import('..\\pages\\recipes\\add.vue' /* webpackChunkName: "pages/recipes/add" */))
-const _ebea4334 = () => interopDefault(import('..\\pages\\recipes\\_id.vue' /* webpackChunkName: "pages/recipes/_id" */))
+const _bcacd148 = () => interopDefault(import('..\\pages\\recipes\\_id\\index.vue' /* webpackChunkName: "pages/recipes/_id/index" */))
+const _1ad79f20 = () => interopDefault(import('..\\pages\\recipes\\_id\\edit.vue' /* webpackChunkName: "pages/recipes/_id/edit" */))
 const _62d436f1 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
 // TODO: remove in Nuxt 3
@@ -27,21 +28,25 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
-    path: "/fun",
-    component: _9af01a44,
-    name: "fun"
-  }, {
     path: "/recipes",
     component: _62b5d47e,
     name: "recipes"
+  }, {
+    path: "/settings",
+    component: _36932158,
+    name: "settings"
   }, {
     path: "/recipes/add",
     component: _2961cc66,
     name: "recipes-add"
   }, {
     path: "/recipes/:id",
-    component: _ebea4334,
+    component: _bcacd148,
     name: "recipes-id"
+  }, {
+    path: "/recipes/:id/edit",
+    component: _1ad79f20,
+    name: "recipes-id-edit"
   }, {
     path: "/",
     component: _62d436f1,

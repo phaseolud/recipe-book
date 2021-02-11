@@ -65,4 +65,7 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
+  env: {
+    serverUrl: ( '127.0.0.1:8000')
+  }
 }

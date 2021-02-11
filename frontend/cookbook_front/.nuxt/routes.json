@@ -1,37 +1,38 @@
 [
   {
-    "name": "fun",
-    "path": "/fun",
-    "component": "C:\\\\Users\\\\loekv\\\\OneDrive - TU Eindhoven\\\\programming\\\\recipe book\\\\frontend\\\\cookbook_front\\\\pages\\\\fun.vue",
-    "chunkName": "pages/fun",
-    "_name": "_9af01a44"
-  },
-  {
     "name": "recipes",
     "path": "/recipes",
     "component": "C:\\\\Users\\\\loekv\\\\OneDrive - TU Eindhoven\\\\programming\\\\recipe book\\\\frontend\\\\cookbook_front\\\\pages\\\\recipes\\\\index.vue",
-    "chunkName": "pages/recipes/index",
-    "_name": "_62b5d47e"
+    "chunkName": "pages/recipes/index"
+  },
+  {
+    "name": "settings",
+    "path": "/settings",
+    "component": "C:\\\\Users\\\\loekv\\\\OneDrive - TU Eindhoven\\\\programming\\\\recipe book\\\\frontend\\\\cookbook_front\\\\pages\\\\settings.vue",
+    "chunkName": "pages/settings"
   },
   {
     "name": "recipes-add",
     "path": "/recipes/add",
     "component": "C:\\\\Users\\\\loekv\\\\OneDrive - TU Eindhoven\\\\programming\\\\recipe book\\\\frontend\\\\cookbook_front\\\\pages\\\\recipes\\\\add.vue",
-    "chunkName": "pages/recipes/add",
-    "_name": "_2961cc66"
+    "chunkName": "pages/recipes/add"
   },
   {
     "name": "recipes-id",
     "path": "/recipes/:id",
-    "component": "C:\\\\Users\\\\loekv\\\\OneDrive - TU Eindhoven\\\\programming\\\\recipe book\\\\frontend\\\\cookbook_front\\\\pages\\\\recipes\\\\_id.vue",
-    "chunkName": "pages/recipes/_id",
-    "_name": "_ebea4334"
+    "component": "C:\\\\Users\\\\loekv\\\\OneDrive - TU Eindhoven\\\\programming\\\\recipe book\\\\frontend\\\\cookbook_front\\\\pages\\\\recipes\\\\_id\\\\index.vue",
+    "chunkName": "pages/recipes/_id/index"
+  },
+  {
+    "name": "recipes-id-edit",
+    "path": "/recipes/:id/edit",
+    "component": "C:\\\\Users\\\\loekv\\\\OneDrive - TU Eindhoven\\\\programming\\\\recipe book\\\\frontend\\\\cookbook_front\\\\pages\\\\recipes\\\\_id\\\\edit.vue",
+    "chunkName": "pages/recipes/_id/edit"
   },
   {
     "name": "index",
     "path": "/",
     "component": "C:\\\\Users\\\\loekv\\\\OneDrive - TU Eindhoven\\\\programming\\\\recipe book\\\\frontend\\\\cookbook_front\\\\pages\\\\index.vue",
-    "chunkName": "pages/index",
-    "_name": "_62d436f1"
+    "chunkName": "pages/index"
   }
 ]

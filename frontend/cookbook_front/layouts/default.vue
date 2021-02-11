@@ -10,25 +10,32 @@
 	<!-- <section id="bottom-navigation" class="md:hidden block fixed inset-x-0 bottom-0 z-10 bg-white shadow"> // if shown only tablet/mobile-->
 	<section id="bottom-navigation" class="block fixed inset-x-0 bottom-0 z-10 border-t-2 border-red-500 bg-white shadow">
 		<div id="tabs" class="flex justify-between">
-      <nuxt-link to="/" class="w-full focus:text-red-500 hover:text-red-500 justify-center inline block text-center pt-2 pb-2">
+      <nuxt-link to="/" class="w-full focus:text-red-500 hover:text-red-500 justify-center inline text-center pt-2 pb-2">
         <fa-layers class="fa-2x">
         <fa icon="home"/>
         </fa-layers>
-				<span class="tab tab-account block text-xs">Home</span>
+				<span class="tab tab-account block text-xs">Start</span>
       </nuxt-link>
 
-      <nuxt-link to="/recipes" class="w-full focus:text-red-500 hover:text-red-500 justify-center inline block text-center pt-2 pb-2">
+      <nuxt-link to="/recipes" class="w-full focus:text-red-500 hover:text-red-500 justify-center inline text-center pt-2 pb-2">
         <fa-layers class="fa-2x">
         <fa icon="search"/>
         </fa-layers>
-				<span class="tab tab-account block text-xs">Search</span>
+				<span class="tab tab-account block text-xs">Zoeken</span>
       </nuxt-link>
 
-      <nuxt-link to="/recipes/add" class="w-full focus:text-red-500 hover:text-red-500 justify-center inline block text-center pt-2 pb-2">
+      <nuxt-link to="/recipes/add" class="w-full focus:text-red-500 hover:text-red-500 justify-center inline text-center pt-2 pb-2">
         <fa-layers class="fa-2x">
         <fa icon="plus"/>
         </fa-layers>
-				<span class="tab tab-account block text-xs">Add</span>
+				<span class="tab tab-account block text-xs">Toevoegen</span>
+      </nuxt-link>
+
+      <nuxt-link to="/settings" class="w-full focus:text-red-500 hover:text-red-500 justify-center inline text-center pt-2 pb-2">
+        <fa-layers class="fa-2x">
+        <fa icon="cog"/>
+        </fa-layers>
+				<span class="tab tab-account block text-xs">Instellingen</span>
       </nuxt-link>
 		</div>
 	</section>
