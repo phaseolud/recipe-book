@@ -206,7 +206,7 @@ export default {
   },
 
   async addRecipe() {
-      if(typeof(this.file) !== 'undefined' && this.file !== null && this.filepath.length === 0) {
+      if(typeof(this.file) !== 'undefined' && this.file !== null) {
            this.filepath = await this.uploadImage();
       }
       let self = this;

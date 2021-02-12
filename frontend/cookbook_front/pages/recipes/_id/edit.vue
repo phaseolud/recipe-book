@@ -7,7 +7,7 @@
         class="bg-red-300 border-red-800 border-2 p-2 align-center flex justify-between rounded"
       >
         <ul>
-          <li v-for="error in errors" v-bind:key="error[0]">{{ error[0] }}</li>
+          <li v-for="(error, index) in errors" v-bind:key="index">{{ error[0] }}</li>
         </ul>
         <button
           @click="errors = {}"
@@ -64,7 +64,7 @@
         <label for="ingredients" class="text-sm text-gray-600 font-sans"
           >ingredienten</label
         >
-        <div v-for="(ingredient,index) in ingredients" v-bind:key="ingredient">
+        <div v-for="(ingredient,index) in ingredients" v-bind:key="index">
           <div class="w-full flex">
             <input
               class="bg-gray-300 focus:outline-none p-1 mr-3 border-b-2 border-red-300 focus:border-red-500 transition duration-300 ease-in-out w-12 flex-none"
@@ -80,7 +80,7 @@
               class="bg-gray-300 focus:outline-none p-1 mr-3 border-b-2 border-red-300 focus:border-red-500 transition duration-300 ease-in-out w-14 flex-none"
             >
               <option value=""></option>
-              <option v-for="option in options" v-bind:value="option" v-bind:key="option">
+              <option v-for="(option,index) in options" v-bind:value="option" v-bind:key="index">
                 {{ option }}
               </option>
             </select>
@@ -89,7 +89,7 @@
               type="text"
               placeholder="ingredient"
               v-model="ingredient.ingredient"
-              :key="ingredient"
+              :key="index"
             />
             <button
               class="pl-3 hover:text-red-500 focus:outline-none"
@@ -111,7 +111,7 @@
         <label for="instructies" class="text-sm text-gray-600 font-sans"
           >instructies</label
         >
-        <div v-for="(stap,index) in instructies" class="mb-2" v-bind:key="stap">
+        <div v-for="(stap,index) in instructies" class="mb-2" v-bind:key="index">
           <div class="flex items-center pb-2">
             <h2 class="text-l">Stap {{ index + 1 }}</h2>
             <button
@@ -181,7 +181,6 @@ export default {
   },
   async fetch() {
       let data = await this.$axios.get('http://' + process.env.serverUrl + '/api/recipes/' + this.recipe_id).then((res) => res.data).catch((error) => console.log(error));
-      console.log(data);
       this.ingredients = data.ingredient;
       this.title = data.title;
       this.instructies = data.instruction;
@@ -219,7 +218,8 @@ export default {
   },
 
   async addRecipe() {
-      if(typeof(this.file) !== 'undefined' && this.file !== null && this.filepath.length === 0) {
+    console.log("Filepath = ", this.filepath)
+      if(typeof(this.file) !== 'undefined' && this.file !== null) {
            this.filepath = await this.uploadImage();
       }
       let self = this;
@@ -231,7 +231,6 @@ export default {
           imagepath: this.filepath,
           source: this.source,
       }).then(function (response) {
-          console.log(response);
           self.$router.push('/recipes');
       }).catch(error => {
           console.log("ERROR: ", error.response.data);

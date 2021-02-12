@@ -7,7 +7,7 @@ The frontend is developed using `nuxt.js`, which fetches data using the laravel 
 
 
 ### Possible future features/todo's: 
-- [] Make it possible to edit added recipes
+- [x] Make it possible to edit added recipes
 - [] Add a settings page, with an option for 
     - [] Creating and managing tags
     - [] Enabling dark mode (or use system preference) 
