@@ -1,14 +1,14 @@
 {
   "Logo": {
-    "description": "Auto imported from components/Logo.vue"
+    "description": "Auto imported from D:/programming/recipe-book/frontend/cookbook_front/components/Logo.vue"
   },
   "LazyLogo": {
-    "description": "Auto imported from components/Logo.vue"
+    "description": "Auto imported from D:/programming/recipe-book/frontend/cookbook_front/components/Logo.vue"
   },
   "RecipeBlock": {
-    "description": "Auto imported from components/RecipeBlock.vue"
+    "description": "Auto imported from D:/programming/recipe-book/frontend/cookbook_front/components/RecipeBlock.vue"
   },
   "LazyRecipeBlock": {
-    "description": "Auto imported from components/RecipeBlock.vue"
+    "description": "Auto imported from D:/programming/recipe-book/frontend/cookbook_front/components/RecipeBlock.vue"
   }
 }

@@ -4,12 +4,12 @@ import { normalizeURL, decode } from '@nuxt/ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _62b5d47e = () => interopDefault(import('..\\pages\\recipes\\index.vue' /* webpackChunkName: "pages/recipes/index" */))
-const _36932158 = () => interopDefault(import('..\\pages\\settings.vue' /* webpackChunkName: "pages/settings" */))
-const _2961cc66 = () => interopDefault(import('..\\pages\\recipes\\add.vue' /* webpackChunkName: "pages/recipes/add" */))
-const _bcacd148 = () => interopDefault(import('..\\pages\\recipes\\_id\\index.vue' /* webpackChunkName: "pages/recipes/_id/index" */))
-const _1ad79f20 = () => interopDefault(import('..\\pages\\recipes\\_id\\edit.vue' /* webpackChunkName: "pages/recipes/_id/edit" */))
-const _62d436f1 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
+const _975a7afe = () => interopDefault(import('..\\pages\\recipes\\index.vue' /* webpackChunkName: "pages/recipes/index" */))
+const _9bda48d2 = () => interopDefault(import('..\\pages\\settings.vue' /* webpackChunkName: "pages/settings" */))
+const _bf74a6e0 = () => interopDefault(import('..\\pages\\recipes\\add.vue' /* webpackChunkName: "pages/recipes/add" */))
+const _180ff339 = () => interopDefault(import('..\\pages\\recipes\\_id\\index.vue' /* webpackChunkName: "pages/recipes/_id/index" */))
+const _303464f3 = () => interopDefault(import('..\\pages\\recipes\\_id\\edit.vue' /* webpackChunkName: "pages/recipes/_id/edit" */))
+const _4e89e98e = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
 // TODO: remove in Nuxt 3
 const emptyFn = () => {}
@@ -29,27 +29,27 @@ export const routerOptions = {
 
   routes: [{
     path: "/recipes",
-    component: _62b5d47e,
+    component: _975a7afe,
     name: "recipes"
   }, {
     path: "/settings",
-    component: _36932158,
+    component: _9bda48d2,
     name: "settings"
   }, {
     path: "/recipes/add",
-    component: _2961cc66,
+    component: _bf74a6e0,
     name: "recipes-add"
   }, {
     path: "/recipes/:id",
-    component: _bcacd148,
+    component: _180ff339,
     name: "recipes-id"
   }, {
     path: "/recipes/:id/edit",
-    component: _1ad79f20,
+    component: _303464f3,
     name: "recipes-id-edit"
   }, {
     path: "/",
-    component: _62d436f1,
+    component: _4e89e98e,
     name: "index"
   }],
 
