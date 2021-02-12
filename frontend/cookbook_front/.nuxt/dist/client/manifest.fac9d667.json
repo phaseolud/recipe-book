@@ -1,7 +1,4 @@
 {
-  "name": "cookbook_front",
-  "short_name": "cookbook_front",
-  "description": "```bash\r # install dependencies\r $ npm install",
   "icons": [
     {
       "src": "/_nuxt/icons/icon_64x64.5f6a36.png",

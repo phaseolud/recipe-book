@@ -42,8 +42,6 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-    // https://go.nuxtjs.dev/content
-    '@nuxt/content',
 
     ['nuxt-fontawesome', {
       component: 'fa', 
@@ -67,12 +65,6 @@ export default {
   build: {},
   env: {
     serverUrl: ( '192.168.2.252:3333')
-  },
-  pwa: {
-    workbox: {
-      offline: false,
-      cacheAssets: false
-    }
   }
 
 }

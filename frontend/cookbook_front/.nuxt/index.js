@@ -14,8 +14,6 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 import nuxt_plugin_plugin_00712232 from 'nuxt_plugin_plugin_00712232' // Source: .\\components\\plugin.js (mode: 'all')
 import nuxt_plugin_templatesplugin64c8f7cc_44e834b6 from 'nuxt_plugin_templatesplugin64c8f7cc_44e834b6' // Source: .\\templates.plugin.64c8f7cc.js (mode: 'all')
-import nuxt_plugin_pluginclient_6679041d from 'nuxt_plugin_pluginclient_6679041d' // Source: .\\content\\plugin.client.js (mode: 'client')
-import nuxt_plugin_pluginserver_679b14b6 from 'nuxt_plugin_pluginserver_679b14b6' // Source: .\\content\\plugin.server.js (mode: 'server')
 import nuxt_plugin_workbox_5f23ffb4 from 'nuxt_plugin_workbox_5f23ffb4' // Source: .\\workbox.js (mode: 'client')
 import nuxt_plugin_metaplugin_11816ea6 from 'nuxt_plugin_metaplugin_11816ea6' // Source: .\\pwa\\meta.plugin.js (mode: 'all')
 import nuxt_plugin_iconplugin_1629141a from 'nuxt_plugin_iconplugin_1629141a' // Source: .\\pwa\\icon.plugin.js (mode: 'all')
@@ -185,14 +183,6 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_templatesplugin64c8f7cc_44e834b6 === 'function') {
     await nuxt_plugin_templatesplugin64c8f7cc_44e834b6(app.context, inject)
-  }
-
-  if (process.client && typeof nuxt_plugin_pluginclient_6679041d === 'function') {
-    await nuxt_plugin_pluginclient_6679041d(app.context, inject)
-  }
-
-  if (process.server && typeof nuxt_plugin_pluginserver_679b14b6 === 'function') {
-    await nuxt_plugin_pluginserver_679b14b6(app.context, inject)
   }
 
   if (process.client && typeof nuxt_plugin_workbox_5f23ffb4 === 'function') {
