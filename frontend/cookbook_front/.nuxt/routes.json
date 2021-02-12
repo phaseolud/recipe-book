@@ -3,36 +3,42 @@
     "name": "recipes",
     "path": "/recipes",
     "component": "D:\\\\programming\\\\recipe-book\\\\frontend\\\\cookbook_front\\\\pages\\\\recipes\\\\index.vue",
-    "chunkName": "pages/recipes/index"
+    "chunkName": "pages/recipes/index",
+    "_name": "_975a7afe"
   },
   {
     "name": "settings",
     "path": "/settings",
     "component": "D:\\\\programming\\\\recipe-book\\\\frontend\\\\cookbook_front\\\\pages\\\\settings.vue",
-    "chunkName": "pages/settings"
+    "chunkName": "pages/settings",
+    "_name": "_9bda48d2"
   },
   {
     "name": "recipes-add",
     "path": "/recipes/add",
     "component": "D:\\\\programming\\\\recipe-book\\\\frontend\\\\cookbook_front\\\\pages\\\\recipes\\\\add.vue",
-    "chunkName": "pages/recipes/add"
+    "chunkName": "pages/recipes/add",
+    "_name": "_bf74a6e0"
   },
   {
     "name": "recipes-id",
     "path": "/recipes/:id",
     "component": "D:\\\\programming\\\\recipe-book\\\\frontend\\\\cookbook_front\\\\pages\\\\recipes\\\\_id\\\\index.vue",
-    "chunkName": "pages/recipes/_id/index"
+    "chunkName": "pages/recipes/_id/index",
+    "_name": "_180ff339"
   },
   {
     "name": "recipes-id-edit",
     "path": "/recipes/:id/edit",
     "component": "D:\\\\programming\\\\recipe-book\\\\frontend\\\\cookbook_front\\\\pages\\\\recipes\\\\_id\\\\edit.vue",
-    "chunkName": "pages/recipes/_id/edit"
+    "chunkName": "pages/recipes/_id/edit",
+    "_name": "_303464f3"
   },
   {
     "name": "index",
     "path": "/",
     "component": "D:\\\\programming\\\\recipe-book\\\\frontend\\\\cookbook_front\\\\pages\\\\index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_4e89e98e"
   }
 ]

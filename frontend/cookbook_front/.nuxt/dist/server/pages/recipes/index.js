@@ -74,12 +74,12 @@ var component = Object(componentNormalizer["a" /* default */])(
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/recipes/index.vue?vue&type=template&id=9056084a&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_vm._ssrNode("<button class=\"rounded-full bg-red-600 text-white h-12 w-12 absolute right-0 mr-4\">R</button> "),(_vm.$fetchState.pending)?_vm._ssrNode("<p>","</p>"):(_vm.$fetchState.error)?_vm._ssrNode(("<p>Error tijdens het laden van de recepten</p>")):_vm._ssrNode("<div class=\"transition duration-300 ease-in-out grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5\">","</div>",_vm._l((_vm.recipes),function(recipe){return _c('recipe-block',{key:recipe.id,attrs:{"recipe":recipe}})}),1)],2)}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/recipes/index.vue?vue&type=template&id=09880f64&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_vm._ssrNode("<button class=\"rounded-full bg-gray-800 text-white h-12 w-12 absolute right-0 mr-4 hover:bg-gray-700 focus:outline-none\">R</button> "),(_vm.$fetchState.pending)?_vm._ssrNode("<p>","</p>"):(_vm.$fetchState.error)?_vm._ssrNode(("<p>Error tijdens het laden van de recepten</p>")):_vm._ssrNode("<div class=\"transition duration-300 ease-in-out grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5\">","</div>",_vm._l((_vm.recipes),function(recipe){return _c('recipe-block',{key:recipe.id,attrs:{"recipe":recipe}})}),1)],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/recipes/index.vue?vue&type=template&id=9056084a&
+// CONCATENATED MODULE: ./pages/recipes/index.vue?vue&type=template&id=09880f64&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/recipes/index.vue?vue&type=script&lang=js&
 //
@@ -101,7 +101,8 @@ var staticRenderFns = []
   },
 
   async fetch() {
-    const url = 'http://' + "192.168.2.252:3333" + '/api/recipes/';
+    const url = 'http://' + "192.168.2.252:3333" + '/api/recipes';
+    console.log(this);
     this.recipes = await fetch(url).then(res => res.json());
   }
 
