@@ -91,7 +91,7 @@ class RecipeController extends Controller
         
         $recipe->title = request('title');
         $recipe->people = request('people');
-        if(request('imagepath')) $recipe->imagepath = request('imagepath');
+        if(request('imagepath')) $recipe->image = request('imagepath');
         $recipe->source = request('source');
         $recipe->save();
 
