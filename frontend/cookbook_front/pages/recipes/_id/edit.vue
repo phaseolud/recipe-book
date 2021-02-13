@@ -211,7 +211,9 @@ export default {
   async uploadImage() {
       let fd = new FormData();
           fd.append('image',this.file);
-          return this.$axios.post('http://' + process.env.serverUrl + '/api/recipes/upload-image',fd).then(response => response.data
+          return this.$axios.post('http://' + process.env.serverUrl + '/api/recipes/upload-image',fd,{headers: {
+            'Content-Type': 'multipart/form-data'
+          }}).then(response => response.data
           ).catch(error => {
               this.errors = error.response.data;
           });
