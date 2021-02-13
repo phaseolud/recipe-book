@@ -54,7 +54,7 @@
         <input
           class="bg-gray-300 border-b-2 border-red-300 focus:border-red-500 focus:outline-none"
           type="file"
-          accept="image/*"
+          accept="image/*;capture=camera"
           name="image"
           id="image"
           @change="handleFile"
