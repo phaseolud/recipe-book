@@ -19,8 +19,7 @@ use App\Models\Recipe;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::middleware(['cors'])->group(function () {
-    
+
     Route::get('recipes',[RecipeController::class,'index']);
     Route::post('recipes',[RecipeController::class,'store']);
     Route::post('recipes/upload-image',[RecipeController::class,'image']);
@@ -29,4 +28,3 @@ Route::middleware(['cors'])->group(function () {
     Route::get('tags',[TagController::class,'index']);
     Route::post('tags',[TagController::class,'store']);
     Route::delete('tags/{tag}',[Tagcontroller::class,'destroy']);
-});

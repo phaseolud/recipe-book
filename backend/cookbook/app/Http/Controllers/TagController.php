@@ -26,13 +26,13 @@ class TagController extends Controller
             'name' => request('tag')
         ]);
 
-        return response()->json($request,201);
+        return response()->json(Tag::all(),201);
     }
 
     public function destroy(Tag $tag)
     {
         $tag->delete();
-        return response()->json(null,204);
+        return response()->json(Tag::all(),204);
 
     }
 }
