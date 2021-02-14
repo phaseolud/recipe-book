@@ -169,7 +169,7 @@ export async function setContext (app, context) {
       payload: context.payload,
       error: context.error,
       base: '/',
-      env: {"serverUrl":"192.168.2.92:8000"}
+      env: {"serverUrl":"192.168.2.252:3333"}
     }
     // Only set once
     if (!process.static && context.req) {

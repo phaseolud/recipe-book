@@ -254,7 +254,7 @@ var staticRenderFns = []
   },
 
   async fetch() {
-    const url = 'http://' + "192.168.2.92:8000" + '/api/tags';
+    const url = 'http://' + "192.168.2.252:3333" + '/api/tags';
     this.tags_available = await fetch(url).then(res => res.json());
   },
 
@@ -290,7 +290,7 @@ var staticRenderFns = []
     async uploadImage() {
       let fd = new FormData();
       fd.append('image', this.file);
-      return this.$axios.post('http://' + "192.168.2.92:8000" + '/api/recipes/' + '/upload-image', fd).then(response => response.data).catch(error => {
+      return this.$axios.post('http://' + "192.168.2.252:3333" + '/api/recipes/' + '/upload-image', fd).then(response => response.data).catch(error => {
         this.errors = error.response.data;
       });
     },
@@ -302,7 +302,7 @@ var staticRenderFns = []
 
       let self = this;
       let send_tags = this.tags.map(tag => tag.id);
-      this.$axios.post('http://' + "192.168.2.92:8000" + '/api/recipes', {
+      this.$axios.post('http://' + "192.168.2.252:3333" + '/api/recipes', {
         ingredients: this.ingredients,
         title: this.title,
         people: this.people,

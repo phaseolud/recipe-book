@@ -257,8 +257,8 @@ var staticRenderFns = []
   },
 
   async fetch() {
-    let data = await this.$axios.get('http://' + "192.168.2.92:8000" + '/api/recipes/' + this.recipe_id).then(res => res.data).catch(error => console.log(error));
-    const url = 'http://' + "192.168.2.92:8000" + '/api/tags';
+    let data = await this.$axios.get('http://' + "192.168.2.252:3333" + '/api/recipes/' + this.recipe_id).then(res => res.data).catch(error => console.log(error));
+    const url = 'http://' + "192.168.2.252:3333" + '/api/tags';
     this.tags_available = await fetch(url).then(res => res.json());
     this.ingredients = data.ingredient;
     this.title = data.title;
@@ -301,7 +301,7 @@ var staticRenderFns = []
     async uploadImage() {
       let fd = new FormData();
       fd.append('image', this.file);
-      return this.$axios.post('http://' + "192.168.2.92:8000" + '/api/recipes/upload-image', fd, {
+      return this.$axios.post('http://' + "192.168.2.252:3333" + '/api/recipes/upload-image', fd, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -319,7 +319,7 @@ var staticRenderFns = []
 
       let self = this;
       let send_tags = this.tags.map(tag => tag.id);
-      this.$axios.put('http://' + "192.168.2.92:8000" + '/api/recipes/' + this.recipe_id, {
+      this.$axios.put('http://' + "192.168.2.252:3333" + '/api/recipes/' + this.recipe_id, {
         ingredients: this.ingredients,
         title: this.title,
         people: this.people,
