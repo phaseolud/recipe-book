@@ -8,12 +8,12 @@ exports.modules = {
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/RecipeBlock.vue?vue&type=template&id=272b9d5a&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('nuxt-link',{staticClass:"bg-gray-200 p-2 rounded-sm",attrs:{"to":'recipes/' + _vm.recipe.id}},[_c('div',{staticClass:"bg-red-300 h-32 rounded-lg hover:bg-red-500 flex align-center"},[(_vm.recipe.image !== null)?_c('img',{staticClass:"hover:opacity-50 object-cover w-full h-32 rounded-lg",attrs:{"src":'http://' + _vm.serverUrl + '/' + _vm.recipe.image,"alt":"","onerror":"this.style.display='none'"}}):_vm._e()]),_vm._v(" "),_c('div',{staticClass:"flex justify-between py-2"},[_c('p',{staticClass:"text-sm font-bold"},[_vm._v(_vm._s(_vm.recipe.title))])])])}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/RecipeBlock.vue?vue&type=template&id=918ed9ca&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('nuxt-link',{staticClass:"bg-gray-200 dark:bg-gray-600 dark:bg-gray-700 p-2 rounded-sm",attrs:{"to":'recipes/' + _vm.recipe.id}},[_c('div',{staticClass:"bg-red-300 h-32 rounded-lg hover:bg-red-500 flex align-center"},[(_vm.recipe.image !== null)?_c('img',{staticClass:"hover:opacity-50 object-cover w-full h-32 rounded-lg",attrs:{"src":'http://' + _vm.serverUrl + '/' + _vm.recipe.image,"alt":"","onerror":"this.style.display='none'"}}):_vm._e()]),_vm._v(" "),_c('div',{staticClass:"flex justify-between py-2"},[_c('p',{staticClass:"text-sm font-bold"},[_vm._v(_vm._s(_vm.recipe.title))])])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./components/RecipeBlock.vue?vue&type=template&id=272b9d5a&
+// CONCATENATED MODULE: ./components/RecipeBlock.vue?vue&type=template&id=918ed9ca&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/RecipeBlock.vue?vue&type=script&lang=js&
 //

@@ -6,7 +6,7 @@ import NuxtLoading from './components/nuxt-loading.vue'
 
 import '..\\node_modules\\@fortawesome\\fontawesome-svg-core\\styles.css'
 
-import '..\\node_modules\\@nuxtjs\\tailwindcss\\lib\\files\\tailwind.css'
+import '..\\assets\\css\\tailwind.css'
 
 import '..\\node_modules\\vue-multiselect\\dist\\vue-multiselect.min.css'
 

@@ -20,11 +20,11 @@
         </fa-layers>
         </nuxt-link>
         </div>
-        <p v-if="recipe_data.source" class="text-sm text-gray-600">
+        <p v-if="recipe_data.source" class="text-sm text-gray-600 dark:text-gray-300">
           bron: {{ recipe_data.source }}
         </p>
         <div class="flex flex-wrap mt-1">
-          <div class="bg-gray-300 py-1 px-2 rounded-md mr-2" v-for="(tag,index) in recipe_data.tags" :key="index">
+          <div class="bg-gray-200 dark:bg-gray-600 py-1 px-2 rounded-md mr-2" v-for="(tag,index) in recipe_data.tags" :key="index">
             {{ tag.name }}
           </div>
         </div>

@@ -21,7 +21,7 @@
       <div class="mb-6">
         <div class="flex">
           <div class="flex-grow mr-5">
-            <label for="title" class="text-sm text-gray-600 font-sans"
+            <label for="title" class="text-sm text-gray-600 dark:text-gray-300 font-sans"
               >titel</label
             >
             <input
@@ -29,17 +29,17 @@
               id="title"
               name="title"
               v-model="title"
-              class="bg-gray-300 focus:outline-none p-1 border-b-2 border-red-300 focus:border-red-500 transition duration-300 ease-in-out w-full"
+              class="bg-gray-200 dark:bg-gray-600 focus:outline-none p-1 border-b-2 border-red-300 focus:border-red-500 transition duration-300 ease-in-out w-full"
               placeholder="titel"
               required
             />
           </div>
           <div class="w-1/6 flex-none">
-            <label class="text-sm text-gray-600 font-sans" for="people"
+            <label class="text-sm text-gray-600 dark:text-gray-300 font-sans" for="people"
               >aantal</label
             >
             <input
-              class="bg-gray-300 focus:outline-none p-1 border-b-2 border-red-300 focus:border-red-500 transition duration-300 ease-in-out w-full"
+              class="bg-gray-200 dark:bg-gray-600 focus:outline-none p-1 border-b-2 border-red-300 focus:border-red-500 transition duration-300 ease-in-out w-full"
               type="number"
               v-model.number="people"
               name="people"
@@ -48,11 +48,11 @@
         </div>
       </div>
       <div class="mb-6">
-        <label class="text-sm text-gray-600 font-sans block" for="image"
+        <label class="text-sm text-gray-600 dark:text-gray-300 font-sans block" for="image"
           >afbeelding</label
         >
         <input
-          class="bg-gray-300 border-b-2 border-red-300 focus:border-red-500 focus:outline-none"
+          class="bg-gray-200 dark:bg-gray-600 border-b-2 border-red-300 focus:border-red-500 focus:outline-none"
           type="file"
           accept="image/*;capture=camera"
           name="image"
@@ -61,13 +61,13 @@
         />
       </div>
       <div class="mb-6">
-        <label for="ingredients" class="text-sm text-gray-600 font-sans"
+        <label for="ingredients" class="text-sm text-gray-600 dark:text-gray-300 font-sans"
           >ingredienten</label
         >
         <div v-for="(ingredient,index) in ingredients" v-bind:key="index">
           <div class="w-full flex">
             <input
-              class="bg-gray-300 focus:outline-none p-1 mr-3 border-b-2 border-red-300 focus:border-red-500 transition duration-300 ease-in-out w-12 flex-none"
+              class="bg-gray-200 dark:bg-gray-600 focus:outline-none p-1 mr-3 border-b-2 border-red-300 focus:border-red-500 transition duration-300 ease-in-out w-12 flex-none"
               type="number"
               min="0"
               ref="ingredient_qnty"
@@ -77,7 +77,7 @@
 
             <select
               v-model="ingredient.unit"
-              class="bg-gray-300 focus:outline-none p-1 mr-3 border-b-2 border-red-300 focus:border-red-500 transition duration-300 ease-in-out w-14 flex-none"
+              class="bg-gray-200 dark:bg-gray-600 focus:outline-none p-1 mr-3 border-b-2 border-red-300 focus:border-red-500 transition duration-300 ease-in-out w-14 flex-none"
             >
               <option value=""></option>
               <option v-for="(option,index) in options" v-bind:value="option" v-bind:key="index">
@@ -85,7 +85,7 @@
               </option>
             </select>
             <input
-              class="bg-gray-300 focus:outline-none p-1 border-b-2 border-red-300 focus:border-red-500 transition duration-300 ease-in-out flex-grow"
+              class="bg-gray-200 dark:bg-gray-600 focus:outline-none p-1 border-b-2 border-red-300 focus:border-red-500 transition duration-300 ease-in-out flex-grow"
               type="text"
               placeholder="ingredient"
               v-model="ingredient.ingredient"
@@ -100,7 +100,7 @@
           </div>
         </div>
         <button
-          class="block mt-3 bg-gray-300 p-2 pl-3 pr-3 focus:outline-none hover:bg-red-500 transition duration-300 ease-in-out"
+          class="block mt-3 bg-gray-200 dark:bg-gray-600 p-2 pl-3 pr-3 focus:outline-none hover:bg-red-500 transition duration-300 ease-in-out"
           @click="addIngredient"
         >
           Ingredient Toevoegen
@@ -108,7 +108,7 @@
       </div>
 
       <div class="mb-6">
-        <label for="instructies" class="text-sm text-gray-600 font-sans"
+        <label for="instructies" class="text-sm text-gray-600 dark:text-gray-300 font-sans"
           >instructies</label
         >
         <div v-for="(stap,index) in instructies" class="mb-2" v-bind:key="index">
@@ -124,7 +124,7 @@
             </button>
           </div>
           <textarea
-            class="bg-gray-300 focus:outline-none p-1 border-b-2 border-red-300 focus:border-red-500 transition duration-300 ease-in-out w-full"
+            class="bg-gray-200 dark:bg-gray-600 focus:outline-none p-1 border-b-2 border-red-300 focus:border-red-500 transition duration-300 ease-in-out w-full"
             type="text"
             placeholder="Instructie" ref="instruction"
             v-model="stap.instruction"
@@ -133,20 +133,20 @@
         </div>
 
         <button
-          class="block mt-3 bg-gray-300 p-2 pl-3 pr-3 focus:outline-none hover:bg-red-500 transition duration-300 ease-in-out"
+          class="block mt-3 bg-gray-200 dark:bg-gray-600 p-2 pl-3 pr-3 focus:outline-none hover:bg-red-500 transition duration-300 ease-in-out"
           @click="addStap"
         >
           Stap toevoegen
         </button>
       </div>
       <div class="mb-6">
-        <label for="source" class="text-sm text-gray-600 font-sans">bron</label>
+        <label for="source" class="text-sm text-gray-600 dark:text-gray-300 font-sans">bron</label>
         <input
               type="text"
               id="source"
               name="source"
               v-model="source"
-              class="bg-gray-300 focus:outline-none p-1 border-b-2 border-red-300 focus:border-red-500 transition duration-300 ease-in-out w-full"
+              class="bg-gray-200 dark:bg-gray-600 focus:outline-none p-1 border-b-2 border-red-300 focus:border-red-500 transition duration-300 ease-in-out w-full"
               placeholder="bron (website/kookboek)"
             />
       </div>
@@ -156,18 +156,17 @@
 
       <button
         @click="addRecipe"
-        class="bg-gray-300 p-2 px-3 focus:outline-none hover:bg-red-500 transition duration-300 ease-in-out"
+        class="bg-gray-200 dark:bg-gray-600 p-2 px-3 focus:outline-none hover:bg-red-500 transition duration-300 ease-in-out"
       >
         Sla op
       </button>
     </div>
   </div>
 </template>
-
 <style>
-  .multiselect__tags {
-    @apply .bg-gray-300 .rounded-none;
-  }
+    .multiselect__tags {
+        @apply bg-gray-200 dark:bg-gray-600 rounded-none border-none;
+        }
 </style>
 <script>
 export default {
