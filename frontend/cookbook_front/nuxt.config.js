@@ -42,7 +42,7 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-
+    'nuxt-vue-multiselect',
     ['nuxt-fontawesome', {
       component: 'fa', 
       imports: [
@@ -64,7 +64,7 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
   env: {
-    serverUrl: ( '192.168.2.252:3333')
+    serverUrl: ( '192.168.2.92:8000' || '192.168.2.252:3333')
   }
 
 }
