@@ -21,18 +21,16 @@ class RecipeController extends Controller
         $data = $recipe;
         $data->instruction;
         $data->ingredient;
+        $data->tags;
         return $data;
 
     }
 
     public function store(Request $request)
     {
-        // request()->validate([
-        //     ''
-        // ])
-
         $validator = Validator::make(request()->all(),[
             'title' => 'required',
+            'tag' => 'nullable|array|exists:tags,id',
             'people' => 'integer|min:0',
             'ingredients.*.name' => 'required',
             'ingredients.*.qnty' => 'numeric|nullable|min:0',
@@ -41,15 +39,18 @@ class RecipeController extends Controller
             'imagepath' => 'nullable',
             'source' => 'nullable'
         ]);
+        
         if($validator->fails()) {
             return response()->json($validator->messages(),422);
         }
+
         $recipe = Recipe::create([
             'title' => request('title'),
             'people' => request('people'),
             'image' => request('imagepath'),
             'source' => request('source')
         ]);
+        $recipe->tags()->sync($request->input('tag'));
 
         foreach (request('instructies') as $index => $instructie) {
             Instruction::create([
@@ -76,6 +77,7 @@ class RecipeController extends Controller
     {
         $validator = Validator::make(request()->all(),[
             'title' => 'required',
+            'tag' => 'nullable|array|exists:tags,id',
             'people' => 'integer|min:0',
             'ingredients.*.ingredient' => 'required',
             'ingredients.*.quantity' => 'numeric|nullable|min:0',
@@ -88,7 +90,7 @@ class RecipeController extends Controller
         if($validator->fails()) {
             return response()->json($validator->messages(),422);
         }
-        
+        $recipe->tags()->sync(request('tag'));
         $recipe->title = request('title');
         $recipe->people = request('people');
         if(request('imagepath')) $recipe->image = request('imagepath');

@@ -150,6 +150,10 @@
               placeholder="bron (website/kookboek)"
             />
       </div>
+ <div class="mb-6">
+        <multiselect v-model="tags" :options="tags_available" :searchable="false" track-by="id" label="name" :multiple="true" placeholder="Kies een tag" class="bg-white focus:outline-none border-b-2 border-red-300 focus:border-red-500 transition duration-300 ease-in-out w-full"></multiselect>
+      </div>
+
       <button
         @click="addRecipe"
         class="bg-gray-300 p-2 px-3 focus:outline-none hover:bg-red-500 transition duration-300 ease-in-out"
@@ -160,6 +164,11 @@
   </div>
 </template>
 
+<style>
+  .multiselect__tags {
+    @apply .bg-gray-300 .rounded-none;
+  }
+</style>
 <script>
 export default {
   data() {
@@ -173,6 +182,8 @@ export default {
     file: null,
     filepath: '',
     source: '',
+    tags: [],
+    tags_available: []
   }
   },
   async asyncData({params }) {
@@ -181,12 +192,17 @@ export default {
   },
   async fetch() {
       let data = await this.$axios.get('http://' + process.env.serverUrl + '/api/recipes/' + this.recipe_id).then((res) => res.data).catch((error) => console.log(error));
+
+      const url = 'http://' + process.env.serverUrl + '/api/tags';
+      this.tags_available = await fetch(url).then(res => res.json());
+
       this.ingredients = data.ingredient;
       this.title = data.title;
       this.instructies = data.instruction;
       this.people = data.people;
       this.source = data.source;
       this.filepath = data.filepath;
+      this.tags = data.tags;
   },
   methods: {
   addIngredient() {
@@ -225,6 +241,7 @@ export default {
            this.filepath = await this.uploadImage();
       }
       let self = this;
+      let send_tags = this.tags.map(tag => tag.id);
       this.$axios.put('http://' + process.env.serverUrl + '/api/recipes/' + this.recipe_id, {
           ingredients: this.ingredients,
           title: this.title,
@@ -232,6 +249,7 @@ export default {
           instructies: this.instructies,
           imagepath: this.filepath,
           source: this.source,
+          tag: send_tags
       }).then(function (response) {
           self.$router.push('/recipes');
       }).catch(error => {

@@ -1,7 +1,7 @@
 exports.ids = [5];
 exports.modules = {
 
-/***/ 34:
+/***/ 43:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31,7 +31,7 @@ var staticRenderFns = []
   props: ['recipe'],
   computed: {
     serverUrl() {
-      return "192.168.2.252:3333";
+      return "192.168.2.92:8000";
     }
 
   }
@@ -67,7 +67,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 35:
+/***/ 44:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -101,7 +101,7 @@ var staticRenderFns = []
   },
 
   async fetch() {
-    const url = 'http://' + "192.168.2.252:3333" + '/api/recipes';
+    const url = 'http://' + "192.168.2.92:8000" + '/api/recipes';
     console.log(this);
     this.recipes = await fetch(url).then(res => res.json());
   }
@@ -137,7 +137,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 /* harmony default export */ var recipes = __webpack_exports__["default"] = (component.exports);
 
 /* nuxt-component-imports */
-installComponents(component, {RecipeBlock: __webpack_require__(34).default})
+installComponents(component, {RecipeBlock: __webpack_require__(43).default})
 
 
 /***/ })

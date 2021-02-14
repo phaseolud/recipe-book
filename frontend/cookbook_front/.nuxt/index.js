@@ -14,6 +14,7 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 import nuxt_plugin_plugin_00712232 from 'nuxt_plugin_plugin_00712232' // Source: .\\components\\plugin.js (mode: 'all')
 import nuxt_plugin_templatesplugin64c8f7cc_44e834b6 from 'nuxt_plugin_templatesplugin64c8f7cc_44e834b6' // Source: .\\templates.plugin.64c8f7cc.js (mode: 'all')
+import nuxt_plugin_nuxtvuemultiselect_74c8e1aa from 'nuxt_plugin_nuxtvuemultiselect_74c8e1aa' // Source: .\\nuxt-vue-multiselect.js (mode: 'all')
 import nuxt_plugin_workbox_5f23ffb4 from 'nuxt_plugin_workbox_5f23ffb4' // Source: .\\workbox.js (mode: 'client')
 import nuxt_plugin_metaplugin_11816ea6 from 'nuxt_plugin_metaplugin_11816ea6' // Source: .\\pwa\\meta.plugin.js (mode: 'all')
 import nuxt_plugin_iconplugin_1629141a from 'nuxt_plugin_iconplugin_1629141a' // Source: .\\pwa\\icon.plugin.js (mode: 'all')
@@ -183,6 +184,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_templatesplugin64c8f7cc_44e834b6 === 'function') {
     await nuxt_plugin_templatesplugin64c8f7cc_44e834b6(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_nuxtvuemultiselect_74c8e1aa === 'function') {
+    await nuxt_plugin_nuxtvuemultiselect_74c8e1aa(app.context, inject)
   }
 
   if (process.client && typeof nuxt_plugin_workbox_5f23ffb4 === 'function') {

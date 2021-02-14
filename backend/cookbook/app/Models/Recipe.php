@@ -18,4 +18,9 @@ class Recipe extends Model
     {
         return $this->hasMany(Instruction::class);
     }
+
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class,'taggable');
+    }
 }

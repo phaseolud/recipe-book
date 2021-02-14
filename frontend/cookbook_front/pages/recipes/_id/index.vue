@@ -11,7 +11,7 @@
           class="w-full h-48 object-cover rounded-lg opacity-100"
         />
       </div>
-      <div class="py-2 mb-4">
+      <div class="py-2 mb-1">
         <div class="flex items-center">
         <p class="text-2xl inline-block">{{ recipe_data.title }}</p>
         <nuxt-link :to="'/recipes/' + recipe_id + '/edit'" class=" hover:text-red-500 focus:outline-none  mt-1 ml-4">
@@ -23,6 +23,11 @@
         <p v-if="recipe_data.source" class="text-sm text-gray-600">
           bron: {{ recipe_data.source }}
         </p>
+        <div class="flex flex-wrap mt-1">
+          <div class="bg-gray-300 py-1 px-2 rounded-md mr-2" v-for="(tag,index) in recipe_data.tags" :key="index">
+            {{ tag.name }}
+          </div>
+        </div>
       </div>
       <div class="md:flex">
         <div class="py-2 md:flex-shrink md:mr-12 md:max-w-p40">

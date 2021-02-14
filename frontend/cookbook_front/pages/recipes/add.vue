@@ -1,13 +1,13 @@
 <template>
   <div>
     <div>
-      <h1 class="text-xl font-sans mb-3 text-gray-900">Add a recipe</h1>
+      <h1 class="text-2xl font-sans mb-3 text-gray-900">Voeg recept toe</h1>
       <div
         v-if="Object.keys(errors).length !== 0"
         class="bg-red-300 border-red-800 border-2 p-2 align-center flex justify-between rounded"
       >
         <ul>
-          <li v-for="error in errors" v-bind:key="error[0]">{{ error[0] }}</li>
+          <li v-for="(error,index) in errors" v-bind:key="index">{{ error[0] }}</li>
         </ul>
         <button
           @click="errors = {}"
@@ -64,7 +64,7 @@
         <label for="ingredients" class="text-sm text-gray-600 font-sans"
           >ingredienten</label
         >
-        <div v-for="(ingredient,index) in ingredients" v-bind:key="ingredient">
+        <div v-for="(ingredient,index) in ingredients" v-bind:key="index">
           <div class="w-full flex">
             <input
               class="bg-gray-300 focus:outline-none p-1 mr-3 border-b-2 border-red-300 focus:border-red-500 transition duration-300 ease-in-out w-12 flex-none"
@@ -80,7 +80,7 @@
               class="bg-gray-300 focus:outline-none p-1 mr-3 border-b-2 border-red-300 focus:border-red-500 transition duration-300 ease-in-out w-14 flex-none"
             >
               <option value=""></option>
-              <option v-for="option in options" v-bind:value="option" v-bind:key="option">
+              <option v-for="(option, indexo) in options" v-bind:value="option" v-bind:key="indexo">
                 {{ option }}
               </option>
             </select>
@@ -89,7 +89,7 @@
               type="text"
               placeholder="ingredient"
               v-model="ingredient.name"
-              :key="ingredient"
+              :key="index"
             />
             <button
               class="pl-3 hover:text-red-500 focus:outline-none"
@@ -111,7 +111,7 @@
         <label for="instructies" class="text-sm text-gray-600 font-sans"
           >instructies</label
         >
-        <div v-for="(stap,index) in instructies" class="mb-2" v-bind:key="stap">
+        <div v-for="(stap,index) in instructies" class="mb-2" v-bind:key="index">
           <div class="flex items-center pb-2">
             <h2 class="text-l">Stap {{ index + 1 }}</h2>
             <button
@@ -150,6 +150,11 @@
               placeholder="bron (website/kookboek)"
             />
       </div>
+      <div class="mb-6">
+        <multiselect v-model="tags" :options="tags_available" :searchable="false" track-by="id" label="name" :multiple="true" placeholder="Kies een tag" class="bg-white focus:outline-none border-b-2 border-red-300 focus:border-red-500 transition duration-300 ease-in-out w-full"></multiselect>
+      </div>
+     
+      
       <button
         @click="addRecipe"
         class="bg-gray-300 p-2 px-3 focus:outline-none hover:bg-red-500 transition duration-300 ease-in-out"
@@ -159,7 +164,11 @@
     </div>
   </div>
 </template>
-
+<style>
+  .multiselect__tags {
+    @apply .bg-gray-300 .rounded-none;
+  }
+</style>
 <script>
 export default {
   data() {
@@ -173,8 +182,14 @@ export default {
     file: null,
     filepath: '',
     source: '',
+    tags: [],
+    tags_available: []
   }
   },
+  async fetch() {
+   const url = 'http://' + process.env.serverUrl + '/api/tags';
+   this.tags_available = await fetch(url).then(res => res.json());
+ },
   methods: {
   addIngredient() {
       this.ingredients.push({"name": '','qnty':'','unit': ''});
@@ -210,13 +225,15 @@ export default {
            this.filepath = await this.uploadImage();
       }
       let self = this;
-      this.$axios.post('http://' + process.env.serverUrl + '/api/recipes/', {
+      let send_tags = this.tags.map(tag => tag.id);
+      this.$axios.post('http://' + process.env.serverUrl + '/api/recipes', {
           ingredients: this.ingredients,
           title: this.title,
           people: this.people,
           instructies: this.instructies,
           imagepath: this.filepath,
           source: this.source,
+          tag: send_tags,
       }).then(function (response) {
           console.log(response);
           self.$router.push('/recipes');
