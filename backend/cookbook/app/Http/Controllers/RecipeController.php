@@ -21,16 +21,13 @@ class RecipeController extends Controller
         $data = $recipe;
         $data->instruction;
         $data->ingredient;
+        $data->tags;
         return $data;
 
     }
 
     public function store(Request $request)
     {
-        // request()->validate([
-        //     ''
-        // ])
-
         $validator = Validator::make(request()->all(),[
             'title' => 'required',
             'people' => 'integer|min:0',
