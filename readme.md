@@ -17,7 +17,7 @@ The frontend is developed using `nuxt.js`, which fetches data using the laravel 
 - [ ] Analyze the ingredient order in the recipe, and give a notification about the order of the ingredients
 - [ ] Highlight ingredients for each step
 - [ ] Find time indications and add a button to automatically add a timer
-- [ ] Scale recipes for multiple people
+- [x] Scale recipes for multiple people
 - [ ] Create a frontend using flutter
 - [ ] Add documentation for the front and backend
 - [ ] Export the recipes to a downloadable pdf for offline usage
