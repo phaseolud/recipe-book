@@ -31,6 +31,10 @@
       </div>
       <div class="md:flex">
         <div class="py-2 md:flex-shrink md:mr-12 md:max-w-p40">
+          <p class="text-lg font-bold pb-1">Aantal personen</p>
+
+          <input type="number" v-model="people" class="bg-gray-200 dark:bg-gray-600 focus:outline-none p-1 border-b-2 border-red-300 focus:border-red-500 transition duration-300 ease-in-out w-16 mb-2"/>
+
           <p class="text-lg font-bold">Ingredienten</p>
           <table class="table-auto">
             <tbody>
@@ -39,7 +43,7 @@
                 v-bind:key="idx"
               >
                 <td nowrap="nowrap" class="align-top">
-                  {{ ingredient.quantity }} {{ ingredient.unit }}
+                  {{ Math.round(ingredient.quantity * people/ recipe_data.people) }} {{ ingredient.unit }}
                 </td>
                 <td class="px-4">{{ ingredient.ingredient }}</td>
               </tr>
@@ -69,6 +73,7 @@ export default {
   data() {
     return {
       recipe_data: {},
+      people: null
     }
   },
   async asyncData({ params }) {
@@ -79,7 +84,9 @@ export default {
     this.recipe_data = await this.$axios
       .get('http://' + process.env.serverUrl + '/api/recipes/' + this.recipe_id)
       .then((res) => res.data)
-      .catch((error) => console.log(error))
+      .catch((error) => console.log(error));
+      console.log(this.recipe_data);
+    this.people = this.recipe_data.people;
   },
   computed: {
     serverUrl() {
