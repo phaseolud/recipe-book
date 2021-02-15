@@ -8,7 +8,6 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
   data() {
@@ -18,7 +17,6 @@ export default {
   },
  async fetch() {
    const url = 'http://' + process.env.serverUrl + '/api/recipes';
-   console.log(this);
    this.recipes = await fetch(url).then(res => res.json());
  }
 }

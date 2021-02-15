@@ -235,7 +235,6 @@ export default {
           source: this.source,
           tag: send_tags,
       }).then(function (response) {
-          console.log(response);
           self.$router.push('/recipes');
       }).catch(error => {
           console.log("ERROR: ", error.response.data);

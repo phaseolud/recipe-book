@@ -8,11 +8,13 @@
         <input type="text" v-model="tag_new" class="bg-gray-200 dark:bg-gray-600 focus:outline-none p-1 border-b-2 border-red-300 focus:border-red-500 transition duration-300 ease-in-out h-10 mr-3" placeholder="Tag"/>
         <button class=" bg-gray-200 dark:bg-gray-600  px-3 h-10 focus:outline-none hover:bg-red-500 transition duration-300 ease-in-out" @click="addTag" >Voeg toe</button>
       </div>
-      <div class="py-4 flex flex-wrap">
-        <div v-for="tag in tags" v-bind:key="tag.id" class="rounded-lg bg-gray-200 dark:bg-gray-600 p-2 mr-2 mb-2">
+        <transition-group name="fade" tag="div" class="py-4 flex flex-wrap">
+        <div v-for="tag in tags" v-bind:key="tag.id">
+          <div class="rounded-lg bg-gray-200 dark:bg-gray-600 p-2 mr-2 mb-2">
           {{ tag.name }}
+          </div>
         </div>
-      </div>
+        </transition-group>
       </div>
 
       <div>
@@ -26,7 +28,14 @@
       </div>
   </div>
 </template>
-
+<style>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+</style>
 <script>
 export default {
   data() {
