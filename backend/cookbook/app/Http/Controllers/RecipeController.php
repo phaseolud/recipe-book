@@ -97,16 +97,18 @@ class RecipeController extends Controller
         $recipe->source = request('source');
         $recipe->save();
 
+        $insructions_add;
         foreach (request('instructies') as $index => $instructie) {
-            Instruction::updateOrCreate([
+            $instructions_add[] = Instruction::updateOrCreate(['id' => $instructie['id'] ?? null],[
                 'recipe_id' => $recipe->id,
                 'instruction' => $instructie['instruction'],
                 'step' => $index
             ]);
         }
 
+        $ingredients_add;
         foreach (request('ingredients') as $index => $ingredient) {
-            Ingredient::updateOrCreate([
+            $ingredients_add[] = Ingredient::updateOrCreate(['id' => $ingredient['id'] ?? null],[
                 'recipe_id' => $recipe->id,
                 'ingredient' => $ingredient['ingredient'],
                 'unit' => $ingredient['unit'] ?? null,
@@ -114,6 +116,13 @@ class RecipeController extends Controller
                 'importance' => $index
             ]);
         }
+
+        // remove ingredients/instructions that are not in the recipe
+        $instruction_remove = $recipe->instruction->diff($instructions_add)->pluck('id');
+        $ingredient_remove = $recipe->ingredient->diff($ingredients_add)->pluck('id');
+        Instruction::destroy($instruction_remove);
+        Ingredient::destroy($ingredient_remove);
+        
 
     }
 
