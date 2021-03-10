@@ -43,8 +43,11 @@
                 v-bind:key="idx"
               >
                 <td nowrap="nowrap" class="align-top">
-                  {{ Math.round(ingredient.quantity * people/ recipe_data.people) }} {{ ingredient.unit }}
-                </td>
+                  <div v-if="ingredient.quantity">
+                    
+                    {{ Math.round(ingredient.quantity * people/ recipe_data.people) }} {{ ingredient.unit }}
+                  </div>
+                  </td>
                 <td class="px-4">{{ ingredient.ingredient }}</td>
               </tr>
             </tbody>

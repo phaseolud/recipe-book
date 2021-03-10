@@ -160,6 +160,9 @@
       >
         Sla op
       </button>
+      <button @click="deleteRecipe" class="text-white bg-red-600 dark:bg-red-600 p-2 px-3 focus:outline-none hover:bg-red-800 transition duration-300 ease-in-out">
+        Verwijder
+      </button>
     </div>
   </div>
 </template>
@@ -255,6 +258,12 @@ export default {
           console.log("ERROR: ", error.response.data);
           this.errors = error.response.data;
       });
+  },
+  deleteRecipe() {
+    let self = this;
+    if (confirm('Dit recept verwijderen?')) {
+      this.$axios.delete('http://' + process.env.serverUrl + '/api/recipes/' + this.recipe_id).then(function(response) {self.$router.push('/recipes')}).catch(error => {console.log('ERROR: ', error); this.errors = error});
+    }
   }
   }
 }
