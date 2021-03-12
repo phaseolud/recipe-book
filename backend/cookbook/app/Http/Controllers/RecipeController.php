@@ -97,7 +97,7 @@ class RecipeController extends Controller
         $recipe->source = request('source');
         $recipe->save();
 
-        $insructions_add = [];
+        $instructions_add;
         foreach (request('instructies') as $index => $instructie) {
             $instructions_add[] = Instruction::updateOrCreate(['id' => $instructie['id'] ?? null],[
                 'recipe_id' => $recipe->id,
@@ -106,7 +106,7 @@ class RecipeController extends Controller
             ]);
         }
 
-        $ingredients_add = [];
+        $ingredients_add;
         foreach (request('ingredients') as $index => $ingredient) {
             $ingredients_add[] = Ingredient::updateOrCreate(['id' => $ingredient['id'] ?? null],[
                 'recipe_id' => $recipe->id,
