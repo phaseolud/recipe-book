@@ -28,3 +28,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     Route::get('tags',[TagController::class,'index']);
     Route::post('tags',[TagController::class,'store']);
     Route::delete('tags/{tag}',[Tagcontroller::class,'destroy']);
+    Route::delete('recipes/{recipe}',[RecipeController::class,'destroy']);

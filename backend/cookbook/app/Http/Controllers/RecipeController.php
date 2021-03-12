@@ -122,8 +122,6 @@ class RecipeController extends Controller
         $ingredient_remove = $recipe->ingredient->diff($ingredients_add)->pluck('id');
         Instruction::destroy($instruction_remove);
         Ingredient::destroy($ingredient_remove);
-        
-
     }
 
     public function image() 
@@ -136,5 +134,10 @@ class RecipeController extends Controller
         }
         $path = request()->file('image')->store('recipe-images');
         return response()->json($path,201);
+    }
+
+    public function destroy(Recipe $recipe)
+    {
+        $recipe->delete();
     }
 }
