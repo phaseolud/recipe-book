@@ -8,12 +8,12 @@ exports.modules = {
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/recipes/_id/index.vue?vue&type=template&id=16838b0c&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/recipes/_id/index.vue?vue&type=template&id=1a57321c&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[(_vm.$fetchState.pending)?_vm._ssrNode("<p>","</p>"):(_vm.$fetchState.error)?_vm._ssrNode(("<p>Error tijdens het laden van de recepten</p>")):_vm._ssrNode("<div>","</div>",[_vm._ssrNode("<div class=\"bg-red-500 rounded-lg h-48\">"+((_vm.recipe_data.image !== null)?("<img"+(_vm._ssrAttr("src",'http://' + _vm.serverUrl + '/' + _vm.recipe_data.image))+" alt class=\"w-full h-48 object-cover rounded-lg opacity-100\">"):"<!---->")+"</div> "),_vm._ssrNode("<div class=\"py-2 mb-1\">","</div>",[_vm._ssrNode("<div class=\"flex items-center\">","</div>",[_vm._ssrNode("<p class=\"text-2xl inline-block\">"+_vm._ssrEscape(_vm._s(_vm.recipe_data.title))+"</p> "),_c('nuxt-link',{staticClass:" hover:text-red-500 focus:outline-none  mt-1 ml-4",attrs:{"to":'/recipes/' + _vm.recipe_id + '/edit'}},[_c('fa-layers',{staticClass:"fa inline-block"},[_c('fa',{attrs:{"icon":"pen"}})],1)],1),_vm._ssrNode(" "),_vm._ssrNode("<button class=\"mt-1 ml-4\">","</button>",[_c('fa',{attrs:{"icon":"save"}})],1)],2),_vm._ssrNode(" "+((_vm.recipe_data.source)?("<p class=\"text-sm text-gray-600 dark:text-gray-300\">"+_vm._ssrEscape("\n        bron: "+_vm._s(_vm.recipe_data.source)+"\n      ")+"</p>"):"<!---->")+" <div class=\"flex flex-wrap mt-1\">"+(_vm._ssrList((_vm.recipe_data.tags),function(tag,index){return ("<div class=\"bg-gray-200 dark:bg-gray-600 py-1 px-2 rounded-md mr-2\">"+_vm._ssrEscape("\n          "+_vm._s(tag.name)+"\n        ")+"</div>")}))+"</div>")],2),_vm._ssrNode(" <div class=\"md:flex\"><div class=\"py-2 md:flex-shrink md:mr-12 md:max-w-p40\"><p class=\"text-lg font-bold pb-1\">Aantal personen</p> <input type=\"number\""+(_vm._ssrAttr("value",(_vm.people)))+" class=\"bg-gray-200 dark:bg-gray-600 focus:outline-none p-1 border-b-2 border-red-300 focus:border-red-500 transition duration-300 ease-in-out w-16 mb-2\"> <p class=\"text-lg font-bold\">Ingredienten</p> <table class=\"table-auto\"><tbody>"+(_vm._ssrList((_vm.recipe_data.ingredient),function(ingredient,idx){return ("<tr><td nowrap=\"nowrap\" class=\"align-top\">"+((ingredient.quantity)?("<div>"+_vm._ssrEscape("\n                  \n                  "+_vm._s(Math.round(ingredient.quantity * _vm.people/ _vm.recipe_data.people))+" "+_vm._s(ingredient.unit)+"\n                ")+"</div>"):"<!---->")+"</td> <td class=\"px-4\">"+_vm._ssrEscape(_vm._s(ingredient.ingredient))+"</td></tr>")}))+"</tbody></table></div> <div class=\"py-2 md:flex-grow\">"+(_vm._ssrList((_vm.recipe_data.instruction),function(instruction){return ("<div class=\"pb-2 mb-4 w-full border-b-2 border-gray-300\"><p class=\"text-lg font-bold\">"+_vm._ssrEscape("\n            Stap "+_vm._s(Number(instruction.step) + 1)+"\n          ")+"</p> <p class=\"text-sm\">"+_vm._ssrEscape(_vm._s(instruction.instruction))+"</p></div>")}))+"</div></div>")],2)])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/recipes/_id/index.vue?vue&type=template&id=16838b0c&
+// CONCATENATED MODULE: ./pages/recipes/_id/index.vue?vue&type=template&id=1a57321c&
 
 // EXTERNAL MODULE: external "jspdf"
 var external_jspdf_ = __webpack_require__(37);
@@ -195,7 +195,7 @@ var external_jspdf_default = /*#__PURE__*/__webpack_require__.n(external_jspdf_)
         row += blockHeight + 6;
       }
 
-      doc.save("Recept " + recipe_data.title + ".pdf");
+      doc.save("Recept " + this.recipe_data.title + ".pdf");
     }
 
   }

@@ -162,7 +162,7 @@ export default {
         row += blockHeight + 6;
       }
    
-        doc.save("Recept " + recipe_data.title + ".pdf");
+        doc.save("Recept " + this.recipe_data.title + ".pdf");
     }
   }
 }
