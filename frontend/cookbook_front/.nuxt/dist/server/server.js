@@ -1616,17 +1616,17 @@ if (false) {}
 
 
 
-const _975a7afe = () => interopDefault(__webpack_require__.e(/* import() | pages/recipes/index */ 5).then(__webpack_require__.bind(null, 50)));
+const _975a7afe = () => interopDefault(__webpack_require__.e(/* import() | pages/recipes/index */ 5).then(__webpack_require__.bind(null, 51)));
 
-const _9bda48d2 = () => interopDefault(__webpack_require__.e(/* import() | pages/settings */ 6).then(__webpack_require__.bind(null, 51)));
+const _9bda48d2 = () => interopDefault(__webpack_require__.e(/* import() | pages/settings */ 6).then(__webpack_require__.bind(null, 52)));
 
-const _bf74a6e0 = () => interopDefault(__webpack_require__.e(/* import() | pages/recipes/add */ 4).then(__webpack_require__.bind(null, 52)));
+const _bf74a6e0 = () => interopDefault(__webpack_require__.e(/* import() | pages/recipes/add */ 4).then(__webpack_require__.bind(null, 53)));
 
-const _180ff339 = () => interopDefault(__webpack_require__.e(/* import() | pages/recipes/_id/index */ 3).then(__webpack_require__.bind(null, 53)));
+const _180ff339 = () => interopDefault(__webpack_require__.e(/* import() | pages/recipes/_id/index */ 3).then(__webpack_require__.bind(null, 54)));
 
-const _303464f3 = () => interopDefault(__webpack_require__.e(/* import() | pages/recipes/_id/edit */ 2).then(__webpack_require__.bind(null, 54)));
+const _303464f3 = () => interopDefault(__webpack_require__.e(/* import() | pages/recipes/_id/edit */ 2).then(__webpack_require__.bind(null, 55)));
 
-const _4e89e98e = () => interopDefault(__webpack_require__.e(/* import() | pages/index */ 1).then(__webpack_require__.bind(null, 55))); // TODO: remove in Nuxt 3
+const _4e89e98e = () => interopDefault(__webpack_require__.e(/* import() | pages/index */ 1).then(__webpack_require__.bind(null, 56))); // TODO: remove in Nuxt 3
 
 
 const emptyFn = () => {};
@@ -3402,6 +3402,12 @@ const createNext = ssrContext => opts => {
   await beforeRender();
   return _app;
 });
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports) {
+
+module.exports = require("jspdf");
 
 /***/ })
 /******/ ]);

@@ -19,6 +19,7 @@
           <fa icon="pen" />
         </fa-layers>
         </nuxt-link>
+        <button @click="createPDF" class="mt-1 ml-4"> <fa icon="save"/> </button>
         </div>
         <p v-if="recipe_data.source" class="text-sm text-gray-600 dark:text-gray-300">
           bron: {{ recipe_data.source }}
@@ -72,6 +73,7 @@
 </template>
 
 <script>
+import jsPDF from 'jspdf';
 export default {
   data() {
     return {
@@ -88,12 +90,84 @@ export default {
       .get('http://' + process.env.serverUrl + '/api/recipes/' + this.recipe_id)
       .then((res) => res.data)
       .catch((error) => console.log(error));
-      console.log(this.recipe_data);
     this.people = this.recipe_data.people;
   },
   computed: {
     serverUrl() {
       return process.env.serverUrl;
+    }
+  },
+  methods: {
+    createPDF() {
+      const doc = new jsPDF();
+      let row = 30;
+      let ingredient_col = 20;
+      doc.setFont('helvetica');
+      doc.setFontSize(36);
+      doc.text(this.recipe_data.title, ingredient_col, row);
+      row += 6;
+      doc.setFontSize(16);
+      doc.setTextColor(110,110,110);
+      doc.text(String(this.recipe_data.people) + ' personen', ingredient_col, row);
+
+      row += 30;
+      let title_row = row;
+      // ingredients
+      doc.setFontSize(18);
+      doc.setTextColor(232, 23, 82);
+      doc.text('Ingredienten', ingredient_col, row);
+      row += 8;
+      doc.setFontSize(10);
+      let lineHeight = doc.getLineHeight('Some text') / doc.internal.scaleFactor;
+      doc.setTextColor(50,50,50);
+      for (let i = 0; i < this.recipe_data.ingredient.length; i++) {
+        const ing = this.recipe_data.ingredient[i];
+        let ing_str = '';
+        if (ing.quantity !== null) {ing_str += ing.quantity + " "};
+        if (ing.unit !== null) {ing_str += ing.unit + " "};
+        ing_str += ing.ingredient
+        let splitIng = doc.splitTextToSize(ing_str,50);
+        let ing_lines = splitIng.length;
+        let blockHeight = splitIng.length * lineHeight;
+        doc.text(splitIng, ingredient_col , row);
+        row += blockHeight;
+
+      }
+      
+      // beschrijving
+      const beschrijving_col = 90;
+      row = title_row;
+      doc.setFontSize(18);
+      doc.setTextColor(232, 23, 82);
+      doc.text('Beschrijving', beschrijving_col, row);
+      row += 8;
+      doc.setFontSize(10);
+      doc.setTextColor(50,50,50);
+      for (let i = 0; i < this.recipe_data.instruction.length; i++) {
+        const instr = this.recipe_data.instruction[i];
+        
+        // step
+        doc.setFontSize(18);
+        doc.setTextColor(232, 23, 82);
+        doc.text( String(i + 1), beschrijving_col - 3, row + 3, 'right');
+
+        // instruction
+        doc.setFontSize(10);
+        doc.setTextColor(50,50,50);
+        let splitText = doc.splitTextToSize(instr.instruction, 110);
+        doc.text(splitText, beschrijving_col, row);
+
+        let lines = splitText.length;
+        let blockHeight = lines * lineHeight;
+        row += blockHeight + 6;
+      }
+   
+        var string = doc.output('datauristring');
+        var embed = "<embed width='100%' height='100%' src='" + string + "'/>"
+        var x = window.open();
+        x.document.open();
+        x.document.write(embed);
+        x.document.close();
     }
   }
 }
